@@ -1,0 +1,48 @@
+module demux_8x2 (
+    input [7:0] din,
+    input [2:0] sel,
+    output reg out0,
+    output reg out1
+);
+
+always @(*)
+    case(sel)
+        3'b000: begin
+            out0 = din[0];
+            out1 = 1'b0;
+        end
+        3'b001: begin
+            out0 = din[1];
+            out1 = 1'b0;
+        end
+        3'b010: begin
+            out0 = din[2];
+            out1 = 1'b0;
+        end
+        3'b011: begin
+            out0 = din[3];
+            out1 = 1'b0;
+        end
+        3'b100: begin
+            out0 = din[4];
+            out1 = 1'b0;
+        end
+        3'b101: begin
+            out0 = din[5];
+            out1 = 1'b0;
+        end
+        3'b110: begin
+            out0 = din[6];
+            out1 = 1'b0;
+        end
+        3'b111: begin
+            out0 = din[7];
+            out1 = 1'b0;
+        end
+        default: begin
+            out0 = 1'b0;
+            out1 = 1'b0;
+        end
+    endcase
+
+endmodule
